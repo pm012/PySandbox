@@ -2,8 +2,8 @@ from turtle import *
 import tkinter as tk
 
 speed(0)
-bgcolor('black')
-color('orange')
+bgcolor('blue')
+color('yellow')
 hideturtle()
 n = 1
 p = True

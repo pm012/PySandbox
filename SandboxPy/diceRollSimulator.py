@@ -9,4 +9,5 @@ while roll_again == 'yes' or roll_again == 'y':
     print("Rolling the dices: ")
     print("The values are... ")
     print(random.randint(MIN_VAL, MAX_VAL))
-    roll_again = input("Roll the dices again?")
+    print(random.randint(MIN_VAL, MAX_VAL))
+    roll_again = input("Roll the dices again? ")
