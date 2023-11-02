@@ -1,0 +1,4 @@
+Welcome to python course
+The main purpose of this file is to work with files
+---
+some line Python is amazing  Python is amazing  Python is amazing  Python is amazing 

@@ -12,5 +12,3 @@ while x == "y":
         result = "It is zero"
     print(result)
     x = input("Enter y to continue set any other char to quit: ")
-
-
