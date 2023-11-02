@@ -80,6 +80,7 @@ playing = True
 while playing:
     FPS.tick(120)
     # Events handling
+    #event = pygame.event.wait()
     for event in pygame.event.get():
         if event.type == QUIT:
             playing = False
