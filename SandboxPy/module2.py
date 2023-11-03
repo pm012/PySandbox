@@ -1,3 +1,5 @@
+
+
 def gcd():
     # greatest common divisor
     first = int(input("Enter the first integer: "))
@@ -85,8 +87,54 @@ def div_zr_exception():
     else:
         print(chunk)
 
+def operand_operator():
+    #Program do mathematical operation
+    # User inputs operand and operator and program should generate operation adn result
+    result = None
+    operand = None
+    operator = None
+    wait_for_number = True
+
+    while True:
+        inp = input("<<< ")
+        if wait_for_number:
+            if inp.isnumeric():
+                wait_for_number = False
+                if result is None:
+                    result = int(inp)
+                    continue
+                else:
+                    operand = int(inp)
+                    match operator:
+                        case '+':
+                            result += operand
+                            continue
+                        case '-':
+                            result -= operand
+                            continue
+                        case '/':
+                            result /= operand
+                            continue
+                        case '*':
+                            result *= operand
+                            continue
+            else:
+                print(f"\'{inp}\' is not a number. Try again.")
+        else:
+            if inp == '=':
+                print(f"Result: {float(result)}")
+                break
+            if inp in ('+', '-', '*', '/'):
+                operator = inp
+                wait_for_number = True
+                continue
+            else:
+                print(f"\'{inp}\' is not '+' or '-' or '/' or '*'. Try again")
+                continue
+
 
 # nested_loops_break()
 # nested_loops_continue()
 # cesarius_cipher()
-div_zr_exception()
+#div_zr_exception()
+operand_operator()
