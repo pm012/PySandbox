@@ -132,9 +132,21 @@ def operand_operator():
                 print(f"\'{inp}\' is not '+' or '-' or '/' or '*'. Try again")
                 continue
 
+x = 5
+def outer():
+    x = 2
+    def inner():
+        nonlocal x
+        x = 10
+    inner()
+    return x
+
+print(outer())
 
 # nested_loops_break()
 # nested_loops_continue()
 # cesarius_cipher()
 #div_zr_exception()
-operand_operator()
+#operand_operator()
+
+
