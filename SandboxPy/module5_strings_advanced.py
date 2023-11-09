@@ -59,7 +59,54 @@ def sanitize_phone_number(phone):
 
 
 # -----task -4 -----------------
-#TODO
+def is_check_name(fullname, first_name):
+    return fullname.startswith(first_name)
+
+
+# ----------task -5 --------------
+def sanitize_phone_number(phone):
+    new_phone = (
+        phone.strip()
+        .removeprefix("+")
+        .replace("(", "")
+        .replace(")", "")
+        .replace("-", "")
+        .replace(" ", "")
+    )
+    return new_phone
+
+
+def get_phone_numbers_for_countries(list_phones):
+    phones_dict = {"UA": [], "JP": [], "TW": [], "SG": []}
+    ua_phones = []
+    jp_phones = []
+    tw_phones = []
+    sg_phones = []
+
+    """ua_phones ={"UA": '380'}
+    jp_phones = {"JP": '81'} 
+    tw_phones = {"TW": '886'} 
+    sg_phones = {"SG": '65'}"""
+
+    normalized_phone = None
+    for phone in list_phones:
+        normalized_phone = sanitize_phone_number(phone)
+        if normalized_phone.startswith('81'):
+            jp_phones.append(normalized_phone)
+        elif normalized_phone.startswith('886'):
+            tw_phones.append(normalized_phone)
+        elif normalized_phone.startswith('65'):
+            sg_phones.append(normalized_phone)
+        else:
+            ua_phones.append(normalized_phone)
+
+    phones_dict = phones_dict.update({"UA": ua_phones, "JP": jp_phones, "TW": tw_phones, "SG": sg_phones})
+    return phones_dict
+
+
+phones = ['+380502590542', ' (886) 5342332', ' +81 50 234 45 45', '   65 2345 52 99', '099 4562343', '050 23452345',
+          '+886 8983432']
+print(get_phone_numbers_for_countries(phones))
 
 # ---------task1 - testing -------------
 # text1 = "Alex\nKdfe23\t\f\v.\r" #11
@@ -94,6 +141,13 @@ articles_dict = [
 #print(find_articles("Ocean", True))
 # ------task-3 testing --------------
 # sanitize_phone_number("(050)8889900")
+#---------task4 testing -----------
+# print(is_check_name("Serhii Kroshka", "Serhii"))
+# print(is_check_name("serhii Kroshka", "Serhii"))
+# print(is_check_name("Serhii Kroshka", "serhii"))
+# print(is_check_name("Alex Kroshka", "Serhii"))
+#-----------task 5 testing - ----------------
+
 
 
 
