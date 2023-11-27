@@ -1,3 +1,5 @@
+import shutil
+
 class Pizza:
     def __init__(self, toppings):
         self.toppings = toppings
@@ -15,4 +17,6 @@ pizza=[]
 if all(Pizza.validate_topping(i) for i in ingredients):
     pizza = Pizza(ingredients)
 
-print(pizza.toppings)
+#print(pizza.toppings)
+number_to_sting = str
+print(type(number_to_sting(5)))
