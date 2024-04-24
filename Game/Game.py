@@ -27,15 +27,15 @@ dialogue_box = False
 
 main_display = pygame.display.set_mode((WIDTH, HEIGHT))
 
-bg = pygame.transform.scale(pygame.image.load('res/background.png'), (WIDTH, HEIGHT))
+bg = pygame.transform.scale(pygame.image.load('Game/res/background.png'), (WIDTH, HEIGHT))
 bg_X1 = 0
 bg_X2 = bg.get_width()
 bg_move = 3
 
-IMAGE_PATH = "res/Goose"
+IMAGE_PATH = "Game/res/Goose"
 PLAYER_IMAGES = os.listdir(IMAGE_PATH)
 
-player = pygame.image.load('res/player.png').convert_alpha()
+player = pygame.image.load('Game/res/player.png').convert_alpha()
 player_rect = player.get_rect()
 player_move_down = [0, 4]
 player_speed_right = [4, 0]
@@ -44,7 +44,7 @@ player_speed_left = [-4, 0]
 
 
 def create_enemy():
-    enemy = pygame.image.load('res/enemy.png').convert_alpha()
+    enemy = pygame.image.load('Game/res/enemy.png').convert_alpha()
     enemy = pygame.transform.scale(enemy, (100, 35))
     enemy_size = enemy.get_size()
     enemy_rect = pygame.Rect(WIDTH, random.randint(30, HEIGHT - enemy_size[1]), *enemy_size)
@@ -53,7 +53,7 @@ def create_enemy():
 
 
 def create_bonus():
-    bonus = pygame.image.load('res/bonus.png').convert_alpha()
+    bonus = pygame.image.load('Game/res/bonus.png').convert_alpha()
     bonus = pygame.transform.scale(bonus, (90, 150))
     bonus_size = bonus.get_size()
     # set starting point -230 for bonuses to make the bounus start moving beyond the playfield edges
