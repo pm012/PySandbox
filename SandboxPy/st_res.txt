@@ -1,0 +1,3 @@
+2024-12-03Download Speed in Mbps: 92.96
+ Uopload Speed in Mbps: 89.45
+ Ping: 11.899
