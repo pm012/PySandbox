@@ -1,6 +1,14 @@
 # Koprekar's constant
 # def revert_number(n:int)->int:
 #     return int(str(n)[::-1])
+"""
+Take any four digit number (e.g. 3942)
+Rearrange its digits into ascending and descending order(e.g. 2349 and 9432)
+Subtract the smaller from the larger (e.g. 9432 - 2349 = 7083)
+Now repeat the same procedure with the new number.
+(so here we would do 8730 - 378 = 8352
+and so on ...
+"""
 
 def number_checkup(n: str) -> bool:
     """
@@ -16,9 +24,11 @@ def number_checkup(n: str) -> bool:
         raise ValueError("Input must have at least two distinct digits.")
     return True
 
-def calc_diff(n: int, rev: int) -> int:
-    """Calculates the difference between two numbers."""
-    return abs(n - rev)
+def calc_diff(n: str) -> int:
+    """Calculates the difference between the largest and smallest permutations of the number."""
+    asc = int("".join(sorted(n)))  # Sort digits in ascending order
+    desc = int("".join(sorted(n, reverse=True)))  # Sort digits in descending order
+    return desc - asc
 
 def kaprekar_constant(n: str) -> int:
     """
@@ -31,23 +41,16 @@ def kaprekar_constant(n: str) -> int:
     # Validate the input
     number_checkup(n)
 
-    # Convert the input string to an integer
-    n_int = int(n)
-
-    while n_int != KAPREKAR_CONSTANT:
-        # Sort digits in ascending and descending order
-        asc = int("".join(sorted(n)))
-        desc = int("".join(sorted(n, reverse=True)))
-
+    while int(n) != KAPREKAR_CONSTANT:
         # Calculate the difference
-        n_int = calc_diff(desc, asc)
+        diff = calc_diff(n)
         steps += 1
-        print(f"{steps}. {n_int} = {desc} - {asc}")
+        print(f"{steps}. {diff} = {''.join(sorted(n, reverse=True))} - {''.join(sorted(n))}")
 
         # Update the string representation
-        n = f"{n_int:04d}"
+        n = f"{diff:04d}"
 
-        if n_int == 0:
+        if diff == 0:
             raise ValueError("Kaprekar's process cannot proceed with all identical digits.")
 
     return steps
