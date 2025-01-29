@@ -14,11 +14,10 @@ def income_tax():
 
 def leap_year():
     year = int(input("Enter a year: "))
-
     if year < 1582:
-	    print("Not within the Gregorian calendar period")
+        print("Not within the Gregorian calendar period")
     else:
-        if (year % 4 == 0 and year % 100 != 0) or (year % 400) == 0:
+        if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
             print("It's a leap year")
         else:
             print("It's a common year")
