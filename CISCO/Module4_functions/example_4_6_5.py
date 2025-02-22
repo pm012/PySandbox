@@ -11,7 +11,7 @@ while True:
             break
   
     if name in school_class:
-        school_class[name] += (score,)
+        school_class[name] += (score,) # It's just for an example it will be much better to use list to prevent memory leaks
         print(school_class)
     else:
         school_class[name] = (score,)
