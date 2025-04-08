@@ -1,4 +1,6 @@
-class SingletonMeta(type):
+# For multiple singleton classes
+
+class SingletonInheritBase(type):
     _instances = {}
 
     def __call__(cls, *args, **kwds):        
@@ -6,7 +8,7 @@ class SingletonMeta(type):
             cls._instances[cls] = super().__call__(*args, **kwds)
         return cls._instances[cls]
     
-class Singleton(metaclass = SingletonMeta):
+class Singleton(metaclass = SingletonInheritBase):
     pass
 
 

@@ -1,5 +1,5 @@
 # tests.py
-from reverts import reverts
+from Algorithms.reverts import reverts
 from unittest import TestCase
 class TestingReverse(TestCase):
 
