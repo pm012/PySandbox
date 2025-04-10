@@ -1,9 +1,13 @@
+# pip install speedtest-cli
 import speedtest 
+import os
 from datetime import date
 
+
 def speed_test():
-    test = speedtest.Speedtest()
-    with open("st_res.txt", "w+") as file:
+    test = speedtest.Speedtest(secure=True) #secure is False by default
+    test.get_best_server()
+    with open(file_path, "w+") as file:
         file.write(str(date.today()))
     
         down_speed = test.download()
@@ -25,5 +29,8 @@ def speed_test():
         file.write(res)
 
 if __name__ == "__main__":
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, "st_res.txt")
+    
     speed_test()
 
