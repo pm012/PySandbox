@@ -17,11 +17,19 @@ Eleven animals I slam in a net => It's not a palindrome
 '''
 
 def is_palindrome(text: str)->bool:
+    text = text.lower()
+    print(text)
+    text = "".join(text.split())
+    print(text)
     return text[::] == text[::-1]
     
     
 if __name__ == "__main__":
-    text = "Ten animals I slam in a net"
-    #request = is_palindrome(text)
-    print(text.lower())
+    texts = ["Ten animals I slam in a net", "Eleven animals I slam in a net"]
+    for text in texts:
+        if  is_palindrome(text):
+            print(f"{text} => It's a polindrome")
+        else:
+            print(f"{text} => It's not a polindrome")
+
     
