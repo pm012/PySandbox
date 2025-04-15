@@ -28,3 +28,9 @@ file_path = os.path.join(script_dir, "test.txt")
 
 Note!: Don't forget to replace "test.txt" to your file or variable setting the filename
 and use file_path to create file
+
+to import the file from the directory above before import:
+
+```python
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+```
