@@ -15,21 +15,25 @@ Test your code using the data we've provided.
 20000101 => 4
 '''
 
-def calc_sum(str_num: str)-> int:
-    int_list = [int(i) for i in str_num.split()]
-    res = sum(int_list)
+def calc_sum(str_nums: str)-> int:
+    int_lst = [int(char) for char in str_nums]
+    res = sum(int_lst)
     return res
     
 
-def digit_of_life(b_date: str)-> int:
-    if (len(b_date)!=8) or not b_date.isdigit():
-        raise ValueError
-       
-    else:
-        pass
+def digit_of_life(b_date: str) -> int:
+    """Calculate the digit of life (numerology) from an 8-digit birthdate string."""
+    if len(b_date) != 8 or not b_date.isdigit():
+        raise ValueError("Input must be an 8-digit string.")
+
+    total = calc_sum(b_date)
+    while total > 9:
+        total = calc_sum(str(total))
+
+    return total
         
         
 if __name__ == "__main__":
-    digit_of_life("234")
+    print(digit_of_life("23456789"))
     
     
