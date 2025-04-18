@@ -18,12 +18,26 @@ donut Nabucodonosor => No
 
 '''
 
-def find_a_word(text1:str, text2:str)->str:
-    found = True
+def find_a_word(word:str, text:str)->str:    
     start = 0
-    for ch1 in text1:
-        for ch2 in text2:
-            pass
+    word.lower()
+    text.lower()
+    for char in word:
+        start = text.find(char, start)
+        if start == -1:
+            return "No"
+        start+=1
+    return "Yes"
+
+
+if __name__ == "__main__":
+    print(find_a_word("door", "Nabucodonaoosorr"))  # Yes
+    print(find_a_word("donor", "Nabucodonosor"))  # Yes
+    print(find_a_word("donut", "Nabucodonosor"))  # No
+    print(find_a_word("donut", "Nabucoonosor"))  # No
+
+
+    
             
         
     
