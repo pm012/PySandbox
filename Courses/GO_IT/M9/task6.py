@@ -1,4 +1,4 @@
-def generator_numbers(string="")-> int:
+def generator_numbers(string=""):
     is_curr_digit = False
     num = ""
     for ch in string:
