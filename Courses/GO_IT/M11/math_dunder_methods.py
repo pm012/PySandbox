@@ -11,7 +11,7 @@ class MyDict(UserDict):
         new_dict = MyDict(self.data)
         for key in new_dict:
             if key in other:
-                new_dict.pop(key, None) # remove key if exists (to avoid key error)
+                new_dict.pop(key, None) # remove key if exists (use second parameter "None" to avoid key error)
                 return new_dict
 
 
