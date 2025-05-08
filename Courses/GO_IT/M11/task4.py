@@ -21,6 +21,9 @@ To store the value of a vector's coordinates using an index, like vector[0] = 10
 
 The x coordinate is accessed at index 0, and the y coordinate is accessed at index 1.
 
+
+task 5: implement the __str__ method for the Point class and the Vector class.
+
 '''
 
 class Point:
@@ -47,6 +50,9 @@ class Point:
     def y(self, y):
         if (type(y) == int) or (type(y) == float):
             self.__y = y
+            
+    def __str__(self):
+        return f"Point({self.x}, {self.y})"
 
 
 class Vector:
@@ -74,16 +80,22 @@ class Vector:
         else:
             raise IndexError("Index out of range")
         
+    def __str__(self):
+        return f"Vector({self.coordinates.x}, {self.coordinates.y})"
+        
         
         
         
 if __name__ == "__main__":
-    vector = Vector(Point(1, 10))
+    point = Point(1, 10)
+    vector = Vector(point)
 
     print(vector.coordinates.x)  # 1
     print(vector.coordinates.y)  # 10
 
-    vector[0] = 10  # Set the x coordinate of the vector to 10
+    vector[0] = 13  # Set the x coordinate of the vector to 13
 
-    print(vector[0])  # 10
+    print(vector[0])  # 13
     print(vector[1])  # 10
+    print(vector)  # Vector(13, 10)
+    print(point)  # Point(13, 10)
