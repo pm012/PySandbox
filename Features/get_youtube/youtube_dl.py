@@ -1,6 +1,6 @@
 import yt_dlp
 
-url = 'https://www.youtube.com/watch?v=88vJbxrxYfM&t'  # your video URL
+url = 'https://www.youtube.com/watch?v=1vrEljMfXYo'  # your video URL
 
 ydl_opts = {
     'format': 'bestvideo+bestaudio/best',  # prefer best video and audio separately, fallback to best
