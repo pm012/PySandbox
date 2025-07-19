@@ -23,6 +23,8 @@ def fib(n: int)-> int:
     res = fib(n-1) + fib(n-2)    
     return res
 
+
+#iterative method (effective even without cache)!!!
 def fib1(n:int)-> int:
     a, b = 0, 1
     for _ in range(n):
