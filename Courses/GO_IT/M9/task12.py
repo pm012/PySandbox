@@ -25,7 +25,3 @@ def amount_payment2(payment): #more pythonic style
 if __name__ == "__main__":
     print(amount_payment(payment))
     print(amount_payment1(payment))
-
-    
-    
-    
