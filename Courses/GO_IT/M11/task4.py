@@ -1,9 +1,12 @@
 '''
-Implement the Vector class. The coordinates property defines the coordinates of the vector and is an instance of the Point class. 
-As you know, a vector is a directed segment with a beginning and an end. The beginning will be at the point (0, 0), 
+Implement the Vector class. The coordinates property defines the 
+coordinates of the vector and is an instance of the Point class. 
+As you know, a vector is a directed segment with a beginning and an end. 
+The beginning will be at the point (0, 0), 
 and the end of the vector will be set by the coordinates attribute.
 
-Implement the ability to access the coordinates of an instance of the Vector class through square brackets:
+Implement the ability to access the coordinates of an instance of the Vector 
+class through square brackets:
 
 vector = Vector(Point(1, 10))
 
@@ -15,11 +18,14 @@ vector[0] = 10  # Set the x coordinate of the vector to 10
 print(vector[0])  # 10
 print(vector[1])  # 10
 
-To get a value using the square brackets of the print(vector[0]) object, you have to implement the __getitem__ method of the Vector class.
+To get a value using the square brackets of the print(vector[0]) object, 
+you have to implement the __getitem__ method of the Vector class.
 
-To store the value of a vector's coordinates using an index, like vector[0] = 10, implement the method __setitem__ in the Vector class.
+To store the value of a vector's coordinates using an index, like vector[0] = 10,
+ implement the method __setitem__ in the Vector class.
 
-The x coordinate is accessed at index 0, and the y coordinate is accessed at index 1.
+The x coordinate is accessed at index 0, and the y coordinate is 
+accessed at index 1.
 
 
 task 5: implement the __str__ method for the Point class and the Vector class.
@@ -67,9 +73,7 @@ class Vector:
             self.coordinates.y = value 
         else:
             raise IndexError("Index out of range")
-            
         
-            
 
     def __getitem__(self, index):
         #return self.coordinates.x if index == 0 else self.coordinates.y
@@ -82,9 +86,6 @@ class Vector:
         
     def __str__(self):
         return f"Vector({self.coordinates.x}, {self.coordinates.y})"
-        
-        
-        
         
 if __name__ == "__main__":
     point = Point(1, 10)
