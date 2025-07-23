@@ -60,14 +60,15 @@ def print_contacts(contacts: list):
 if __name__ == "__main__":
     #fake = Faker(locale='uk_UA')
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, "test3.csv")
     
     contacts_list = generate_dict_list(5)
     print("Initial contacts: ")
     print_contacts(contacts_list)
     
-    write_contacts_to_file('test.csv', contacts_list)
+    write_contacts_to_file(file_path, contacts_list)
     
-    recovered_contacts = read_contacts_from_file('test.csv')
+    recovered_contacts = read_contacts_from_file(file_path)
     print("Recovered contacts list: ")
     print_contacts(recovered_contacts)
     
