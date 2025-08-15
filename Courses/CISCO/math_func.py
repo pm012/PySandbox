@@ -12,19 +12,22 @@ seed(0)
 x = 1.4
 y = 2.6
 
-print(platform.platform())
-print(platform.platform(1))
-print(platform.platform(0,1))
-
-print(platform.machine())
-print(platform.system())
-
-print(platform.version())
+print(f'platform: {platform.platform()}')
+print(f'platform.platform(1): {platform.platform(1)}')
+print(f'platform.platform(0,1): {platform.platform(0,1)}')
 
 
-print(python_implementation())
+print(f'platform.machine(): {platform.machine()}')
+print(f'system: {platform.system()}')
 
+print(f' version: {platform.version()}')
+
+
+print(f'python implementation: {python_implementation()}')
+
+print('--------------print attributes--------------')
 for atr in python_version_tuple():
     print(atr)
 
+print('________________print  dir (os)__________________________')
 print(dir(os))
