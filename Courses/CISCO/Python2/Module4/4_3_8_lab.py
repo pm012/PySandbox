@@ -20,8 +20,8 @@ a -> 1
 b -> 1
 c -> 1
 
-Tip: We think that a dictionary is a perfect data collection medium for storing the counts. The letters may be keys while the counters can be values.
-
+Tip: We think that a dictionary is a perfect data collection medium for storing the counts. 
+The letters may be keys while the counters can be values.
 """
 from os import path
 
@@ -57,4 +57,3 @@ if __name__ == "__main__":
     letter_counts = process_latin_letters(file_path)
     # Print the histogram in alphabetical order
     print_histogram_results(letter_counts)
-    
