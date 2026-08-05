@@ -125,6 +125,7 @@ a_env/
 envr/
 myenv/
 .venv
+.venv/
 env/
 venv/
 ENV/
