@@ -12,7 +12,7 @@ logger.setLevel(logging.DEBUG)
 class Pont(Structure):
     _fields_ = [('x', c_double),('y', c_double)]
     
-def worker_modify(num: Synchronized, string: Array, arr: Array):
+def worker_modify(num: Synchronized, string: Array, arr: Array): # Why sycnchronized are used only for num?
     logger.debug(f"Started {current_process().name}")
     logger.debug(f"Change num: {num.value}")
     
@@ -20,8 +20,11 @@ def worker_modify(num: Synchronized, string: Array, arr: Array):
         num.value **=2 # 1. What does it mean?
         
     logger.debug(f"to num: {num.value}")
+    before = string.value
     with string.get_lock():
         string.value = string.value.upper()  # Convert to uppercase
+    
+    logger.debug(f"====={before!r} converted to upper case value {string.value.upper()}===={current_process().name}----")
 
     with arr.get_lock():
         for a in arr:
