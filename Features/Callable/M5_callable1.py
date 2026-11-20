@@ -5,7 +5,7 @@ def power(exponent: int) -> Callable[[int], int]:
         return base ** exponent
     return inner
 
-# Використання
+# Usage
 square = power(2)
 cube = power(3)
 
