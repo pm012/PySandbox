@@ -1,4 +1,4 @@
-# Реалізувати функцію яка приймає список і число і видає пари чисел які в сумі дають це число
+# Implement function that takes a list and a number and returns pairs of numbers that sum up to that number
 from copy import deepcopy
 
 # def find_pairs(nums: list[int], target: int) -> list[tuple[int, int]]:
@@ -25,7 +25,7 @@ def find_pairs(nums1: list[int], target: int) -> list[tuple[int, int]]:
     for num in nums:
         complement = target - num
         if complement in seen:
-            # Сортуємо пару для унікальності: (менше, більше)
+            # Sort the pair for uniqueness: (smaller, larger)
             res.add(tuple(sorted((num, complement))))
         seen.add(num)
         
